@@ -7,7 +7,7 @@ public class BouttonManager : MonoBehaviour {
 
 	public void Jouer()
     {
-        SceneManager.LoadScene("ProtoLevel1");
+        SceneManager.LoadScene("Scenar");
     }
 
     public void Option()
