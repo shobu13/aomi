@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - objet
+  - collider
+  - checkpoint
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: ParallaxLayer1
+    uniqueID: 1498013191
+    locked: 0
+  - name: ParallaxLayer2
+    uniqueID: 3716544009
+    locked: 0
+  - name: animated_background
+    uniqueID: 3229435401
+    locked: 0
+  - name: ParallaxLayer3
+    uniqueID: 3581768839
+    locked: 0
+  - name: background
+    uniqueID: 2082642335
+    locked: 0
+  - name: floor
+    uniqueID: 399786899
+    locked: 0
+  - name: pickup
+    uniqueID: 1612164853
+    locked: 0
+  - name: light
+    uniqueID: 679085259
+    locked: 0
+  - name: player
+    uniqueID: 3940605599
+    locked: 0
+  - name: flore
+    uniqueID: 160253913
+    locked: 0
+  - name: animated_foreground
+    uniqueID: 738497357
+    locked: 0
+  - name: foreground
+    uniqueID: 2891419887
+    locked: 0
+  - name: Collider
+    uniqueID: 4049261179
+    locked: 0
