@@ -4,4 +4,19 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Ezo_Platformer_Devkit/Scene/Menu.unity
+    guid: 7040b618b4402cc4c843b55b58ee9ef1
+  - enabled: 1
+    path: Assets/Ezo_Platformer_Devkit/Scene/Option.unity
+    guid: 9a256a08bce16ea499350ae5249d0c77
+  - enabled: 1
+    path: Assets/Ezo_Platformer_Devkit/Scene/ProtoLevel2.unity
+    guid: 87b7a20f7461ea74793d08f81b32ce0d
+  - enabled: 1
+    path: Assets/Ezo_Platformer_Devkit/Scene/ProtoLevel1.unity
+    guid: 1842904eed8bd584e99c32aa67d90cad
+  - enabled: 1
+    path: Assets/Ezo_Platformer_Devkit/Scene/Scenar.unity
+    guid: cb11b7602172ccc4d8c8c084a8bf32d2
