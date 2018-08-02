@@ -167,7 +167,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f5fe94bb5436716439a265ccb2ccc222, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3d3c2e01296ae4a44b105f1d5b341762, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -356,8 +356,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -290, y: 160}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 60}
+  m_SizeDelta: {x: 500, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1535333593
 MonoBehaviour:
@@ -385,13 +385,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: "J\u2019aime l\u2019obscurit\xE9."
 --- !u!222 &1535333594
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -461,8 +461,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 1308622847
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.303}
+    rgba: 1191182335
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.278}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -627,7 +627,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1720871370}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1896535128}
+        m_MethodName: Incrementation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1720871370
@@ -861,9 +872,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1896535123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdf88d7aa2426e24eb6b5dc88fd1e370, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b402a4d1d655474f96d342e55c18a9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 1535333593}
+  CompteurText: 0
+  Langue: 0
 --- !u!1 &1940553703
 GameObject:
   m_ObjectHideFlags: 0
