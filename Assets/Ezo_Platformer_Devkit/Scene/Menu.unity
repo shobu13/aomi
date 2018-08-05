@@ -927,6 +927,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f36afd83d617d7448aceb76b1fbbfe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ButtonsArray:
+  - tag: PlayText
+    button: {fileID: 1676689233}
+  - tag: OptionText
+    button: {fileID: 157741778}
+  - tag: QuitTest
+    button: {fileID: 1696661049}
 --- !u!1 &1676689233
 GameObject:
   m_ObjectHideFlags: 0
