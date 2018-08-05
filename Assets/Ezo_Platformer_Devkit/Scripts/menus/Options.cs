@@ -6,29 +6,18 @@ using UnityEngine;
 
 public class Options : MonoBehaviour
 {
+    public string Language;
 
     [System.Serializable]
-    public class OptionsSerializer
+    class OptionsSerializer
     {
         public string Language;
-
-        public OptionsSerializer()
-        {
-             Language = "Français";
-        }
     }
-
-    private OptionsSerializer options;
 
     // Use this for initialization
     void Start()
     {
-        options = GetOptions();
-    }
-
-    public OptionsSerializer GetOptions()
-    {
-        OptionsSerializer optionResult = new OptionsSerializer();
+        this.Language = "french";
         try
         {
             TextReader reader;
@@ -36,25 +25,22 @@ public class Options : MonoBehaviour
             string result = reader.ReadToEnd();
             reader.Close();
 
-            optionResult = JsonUtility.FromJson<OptionsSerializer>(result);
+            OptionsSerializer optionResult = JsonUtility.FromJson<OptionsSerializer>(result);
+            this.Language = optionResult.Language;
+            Debug.Log(this.Language);
         }
         catch (FileNotFoundException e)
         {
             TextWriter writer;
             writer = new StreamWriter("Assets/option.json");
-            writer.Write(JsonUtility.ToJson(optionResult));
+            writer.Write(JsonUtility.ToJson(this));
             writer.Close();
             Debug.Log(e);
         }
-        return optionResult;
     }
 
-    public void UpdateFile(OptionsSerializer serializer)
+    string GetLanguage()
     {
-        options = serializer;
-
-        TextWriter writer = new StreamWriter("Assets/option.json");
-        writer.Write(JsonUtility.ToJson(serializer));
-        writer.Close();
+        return Language;
     }
 }

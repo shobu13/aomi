@@ -131,22 +131,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &60934102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 60934101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f36afd83d617d7448aceb76b1fbbfe53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ButtonsArray:
-  - tag: LanguageText
-    button: {fileID: 870458878}
-  - tag: ReturnText
-    button: {fileID: 1813399939}
 --- !u!114 &60934103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,7 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: ece7dc758aa1e1f43888284fcccaf1c2, type: 3}
+  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -1159,8 +1143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b4359388a1e744a890a302a68e2273, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LanguageText: {fileID: 870458878}
-  ReturnText: {fileID: 1813399939}
 --- !u!1 &748698208
 GameObject:
   m_ObjectHideFlags: 0
