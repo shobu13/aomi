@@ -4,45 +4,50 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Scenario : MonoBehaviour {
+public class Scenario : MonoBehaviour
+{
+    public Text Text;
+    public int CompteurText;
 
-    public Text text;
-    public float CompteurText;
-    public float Langue;
+    private LanguageSerializer.StringStringDico _intro;
 
-	void Start () {
+    void Start()
+    {
+        _intro = GameObject.Find("GameManager").GetComponent<Language>().GetLanguage().Intro;
+        Text.text = _intro["intro1"];
+    }
 
-	}
-	
     public void Incrementation()
     {
-
         CompteurText += 1;
-        if (CompteurText == 1 && Langue == 0f)
+        if (CompteurText == 1)
         {
-            text.text = "Chaque soir, quand je m’endors, je rêve.";
+            Text.text = _intro["intro2"];
         }
-        if (CompteurText == 2 && Langue == 0f)
+
+        if (CompteurText == 2)
         {
-            text.text = "J’aime mes rêves. Ils sont faits de plaines froides et de châteaux lugubres. Toujours noirs et déprimants.";
+            Text.text = _intro["intro3"];
         }
-        if (CompteurText == 3 && Langue == 0f)
+
+        if (CompteurText == 3)
         {
-            text.text = "C’est dans mes rêves qu’il y a mon seul ami, Chiro.";
+            Text.text = _intro["intro4"];
         }
-        if (CompteurText == 3 && Langue == 0f)
+
+        if (CompteurText == 3)
         {
-            text.text = "J’aime parler à Chiro.";
+            Text.text = _intro["intro5"];
         }
-        if (CompteurText == 3 && Langue == 0f)
+
+        if (CompteurText == 3)
         {
-            text.text = "Mais je ne suis plus tranquille. Des hordes de petits animaux mignons et de petites fées brillantes veulent détruire mes belles ténèbres. Je ne le permettrai pas !";
+            Text.text = _intro["intro6"];
         }
-        if(CompteurText >= 4)
+
+        if (CompteurText >= 4)
         {
             SceneManager.LoadScene("ProtoLevel1");
         }
-
     }
-
 }
