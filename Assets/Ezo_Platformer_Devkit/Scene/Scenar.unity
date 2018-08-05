@@ -391,7 +391,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "J\u2019aime l\u2019obscurit\xE9."
+  m_Text: sushi !
 --- !u!222 &1535333594
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -875,9 +875,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb4f68a92528bf40a39cd980235bb32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1535333593}
+  Text: {fileID: 1535333593}
   CompteurText: 0
-  Langue: 0
 --- !u!1 &1940553703
 GameObject:
   m_ObjectHideFlags: 0
