@@ -17,6 +17,7 @@ public class PlayerPlatformerController : PhysicsObject
     public Text DebugPos, DebugColliderPos;
     public Tilemap Debug;
 
+    private GameObject Particule_Poussière;
     private SpriteRenderer _spriteRenderer;
     private Animator _animator;
     private int _playerPoint = 0;
@@ -25,6 +26,7 @@ public class PlayerPlatformerController : PhysicsObject
     // Use this for initialization
     void Awake()
     {
+        Particule_Poussière = GameObject.Find("Particule_Poussière");
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _spawnPoint = GetComponent<Transform>().position;
@@ -66,8 +68,23 @@ public class PlayerPlatformerController : PhysicsObject
                 _spriteRenderer.flipX = true;
             }
         }
+        
+        //Propriétes de(s) effet(s) de particule
 
-        _animator.SetBool("grounded", grounded);
+        if (_spriteRenderer.flipX)
+        {
+            Particule_Poussière.transform.eulerAngles = new Vector3(180, 0, 180);
+        }
+        else
+        {
+            Particule_Poussière.transform.eulerAngles = new Vector3(180, 0, 180);
+        }
+
+        Particule_Poussière.SetActive(grounded);
+
+        //Fin des Propriétes
+
+        _animator.SetBool("Grounded", grounded);
         _animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / MaxSpeed);
 
         targetVelocity = move * MaxSpeed;
