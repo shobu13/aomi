@@ -1,0 +1,37 @@
+{
+    "Intro": {
+        "m_keys": [
+            "intro1",
+            "intro2",
+			"intro3",
+			"intro4",
+			"intro5",
+			"intro6"
+        ],
+        "m_values": [
+			"暗黒好きです。",
+            "毎晩、寝ると",
+            "夢を見る。",
+			"あたしの夢、大好きです。 冷たい平原や仄暗い城で作られた。 いつも暗い、いつも うっとうしい。",
+			"夢の中でたった一人の友達シロがいる。 シロと話すことが好きです。",
+			"だが、今はもう安心しない。 小さいかわいい動物とキラキラな妖精の群衆はあたしの大事な暗闇を滅ぼしたい。 これはゆるさないよ。"
+        ]
+    },
+	"UI": {
+        "m_keys": [
+            "LanguageText",
+            "ReturnText",
+			"PlayText",
+			"OptionText",
+			"QuitTest"
+        ],
+        "m_values": [
+            "Langue:",
+            "Retour",
+			"Jouer",
+			"Option",
+			"Quitter"
+        ]
+    },
+    "test": "true"
+}
