@@ -35,17 +35,17 @@ public class Scenario : MonoBehaviour
             Text.text = _intro["intro4"];
         }
 
-        if (CompteurText == 3)
+        if (CompteurText == 4)
         {
             Text.text = _intro["intro5"];
         }
 
-        if (CompteurText == 3)
+        if (CompteurText == 5)
         {
             Text.text = _intro["intro6"];
         }
 
-        if (CompteurText >= 4)
+        if (CompteurText >= 6)
         {
             SceneManager.LoadScene("ProtoLevel1");
         }
