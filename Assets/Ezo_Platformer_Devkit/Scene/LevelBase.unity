@@ -1921,9 +1921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 787d10d4b791bf14aa9553abe9d7d43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OffSetX_A: 0
-  OffSetX_B: 10
-  Speed: 0.025
+  Distance: 10
 --- !u!212 &1289231261
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -85378,7 +85376,7 @@ Prefab:
     - target: {fileID: 198135966045806808, guid: 4c0b25d0ff2ccdc4e82c8d0a30f5bf4d,
         type: 2}
       propertyPath: EmissionModule.rateOverDistance.scalar
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198135966045806808, guid: 4c0b25d0ff2ccdc4e82c8d0a30f5bf4d,
         type: 2}

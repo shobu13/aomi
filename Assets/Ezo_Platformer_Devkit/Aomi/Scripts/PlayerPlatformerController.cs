@@ -77,7 +77,7 @@ public class PlayerPlatformerController : PhysicsObject
         }
         else
         {
-            Particule_Poussière.transform.eulerAngles = new Vector3(180, 0, 180);
+            Particule_Poussière.transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
         Particule_Poussière.SetActive(grounded);
