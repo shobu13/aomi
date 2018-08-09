@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 124059481401922518}
   - component: {fileID: 81656163618995192}
   - component: {fileID: 114177432457772674}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 50957532470992162}
   - component: {fileID: 114754526741775144}
   - component: {fileID: 61177645040079682}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Aomi_CameraTest
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 212695222266095812}
   - component: {fileID: 114276909429547612}
   - component: {fileID: 95358082410657150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chiro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1228663389133828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.87880325, y: 0, z: -10}
+  m_LocalPosition: {x: 0.96844125, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4637327819824302}
@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1494035235523318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11, y: -3, z: 0}
+  m_LocalPosition: {x: -2.5292861, y: -2.992433, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4889966701986400}
@@ -103,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1660560174512516}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.39, y: 0.98, z: 0}
+  m_LocalPosition: {x: -25.10709, y: 1.9854145, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4637327819824302}
@@ -335,7 +335,7 @@ SpriteRenderer:
   m_SortingLayerID: -354361697
   m_SortingLayer: 9
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0b2ae0e05244a2d4da08da90695bc353, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 0b2ae0e05244a2d4da08da90695bc353, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -379,7 +379,7 @@ SpriteRenderer:
   m_SortingLayerID: -354361697
   m_SortingLayer: 9
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: d1b646253e24bfb46bb066cb7563544b, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 8d1123cee2a8a454e94e2e06de873d23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
