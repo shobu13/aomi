@@ -8,6 +8,7 @@ public class Enemie_Poursuite : MonoBehaviour {
     public GameObject Cible;
     public float Speed;
 
+    SpriteRenderer SpriteR;
     bool ToucheMur;
     Rigidbody2D rb2d;
     RaycastHit2D[] hit;
@@ -15,6 +16,7 @@ public class Enemie_Poursuite : MonoBehaviour {
     void Start()
     {
 
+        SpriteR = gameObject.GetComponent<SpriteRenderer>();
         Cible = GameObject.Find("Aomi_CameraTest");
         rb2d = gameObject.GetComponent<Rigidbody2D>();
 
@@ -45,10 +47,12 @@ public class Enemie_Poursuite : MonoBehaviour {
 
                     if (hit[i].transform.position.x > gameObject.transform.position.x)
                     {
+                        SpriteR.flipX = false;
                         rb2d.velocity = new Vector2(Speed, rb2d.velocity.y);
                     }
                     if (hit[i].transform.position.x < gameObject.transform.position.x)
                     {
+                        SpriteR.flipX = true;
                         rb2d.velocity = new Vector2(-Speed, rb2d.velocity.y);
                     }
                 }
