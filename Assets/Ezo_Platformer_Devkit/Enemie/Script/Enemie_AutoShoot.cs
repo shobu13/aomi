@@ -8,8 +8,8 @@ public class Enemie_AutoShoot : MonoBehaviour {
     public float Radius;
     public GameObject BouBoule;
     public GameObject LaBaBalle;
-    public Vector2 OffSet;
 
+    Vector2 OffSet;
     bool CoolDown;
     RaycastHit2D[] hit;
 
