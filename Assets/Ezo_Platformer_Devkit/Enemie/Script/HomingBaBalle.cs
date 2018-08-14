@@ -4,38 +4,40 @@ using UnityEngine;
 
 public class HomingBaBalle : MonoBehaviour {
 
-    public GameObject Cible;
-    private Rigidbody2D rb;
+    public float Force;
+    public GameObject Explosion;
 
-    void FixedUpdate()
+    Rigidbody2D rb2d;
+    GameObject Cible;
+    float CibleX;
+    float CibleY;
+    float BalleX;
+    float BalleY;
+
+    void Start()
     {
-        StartCoroutine("Timer");
-        rb = GetComponent<Rigidbody2D>();
         Cible = GameObject.Find("Aomi_CameraTest");
+        rb2d = gameObject.GetComponent<Rigidbody2D>();
+        CibleX = Cible.transform.position.x;
+        CibleY = Cible.transform.position.y;
+        BalleX = gameObject.transform.position.x;
+        BalleY = gameObject.transform.position.y;
 
-        Vector2 direction = (Vector2)Cible.transform.position - rb.position;
+        rb2d.AddForce(new Vector2(CibleX - BalleX, BalleY - CibleY) * Force, ForceMode2D.Impulse);
+    }
 
-        direction.Normalize();
-
-        float rotateAmount = Vector3.Cross(direction, transform.up).z;
-
-        rb.angularVelocity = -rotateAmount * 150;
-
-        rb.velocity = transform.up * 5;
+    void Update()
+    {
+        Debug.Log(gameObject.transform.position.x - Cible.transform.position.x);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") || collision.name == "floor")
+        if (collision.CompareTag("Player") || collision.name == "floor")
         {
+            Instantiate(Explosion, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }
-    }
-
-    IEnumerator Timer()
-    {
-        yield return new WaitForSeconds(5);
-        Destroy(gameObject);
     }
 
 }
