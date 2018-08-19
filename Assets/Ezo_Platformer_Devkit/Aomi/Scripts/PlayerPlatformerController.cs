@@ -13,13 +13,14 @@ public class PlayerPlatformerController : PhysicsObject
     public Text ScoreText;
     public Tilemap ColliderTilemap;
     public Tilemap CheckpointTilemap;
+    public bool Flip;
 
     public Text DebugPos, DebugColliderPos;
     public Tilemap Debug;
 
+
     private GameObject Particule_Poussière;
     private SpriteRenderer _spriteRenderer;
-    private GameObject _spriteRendererChiro;
     private Animator _animator;
     private int _playerPoint = 0;
     private Vector2 _spawnPoint;
@@ -30,7 +31,6 @@ public class PlayerPlatformerController : PhysicsObject
     {
         Particule_Poussière = GameObject.Find("Particule_Poussière");
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRendererChiro = GameObject.Find("Chiro");
         _animator = GetComponent<Animator>();
         _spawnPoint = GetComponent<Transform>().position;
         ColliderTilemap.GetComponent<TilemapRenderer>().enabled = false;
@@ -59,21 +59,19 @@ public class PlayerPlatformerController : PhysicsObject
 
         if (move.x > 0.01f)
         {
-            _spriteRendererChiro.transform.position = Vector3.Lerp(_spriteRendererChiro.transform.position, new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y + 1, 0), 0.015f);
             if (_spriteRenderer.flipX == true)
             {
+                Flip = false;
                 _spriteRenderer.flipX = false;
-                _spriteRendererChiro.GetComponent<SpriteRenderer>().flipX = false;
             }
         }
         else if (move.x < -0.01f)
         {
-            _spriteRendererChiro.transform.position = Vector3.Lerp(_spriteRendererChiro.transform.position, new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y + 1, 0), 0.015f);
 
             if (_spriteRenderer.flipX == false)
             {
+                Flip = true;
                 _spriteRenderer.flipX = true;
-                _spriteRendererChiro.GetComponent<SpriteRenderer>().flipX = true;
             }
         }
         

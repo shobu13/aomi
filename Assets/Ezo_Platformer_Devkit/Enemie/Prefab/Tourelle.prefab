@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114975211821552702}
   m_Layer: 0
   m_Name: Tourelle
-  m_TagString: Untagged
+  m_TagString: Enemie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,7 +82,6 @@ MonoBehaviour:
   Radius: 7.5
   BouBoule: {fileID: 1210720760108070, guid: 16397f950a0236349a580b46b15ea706, type: 2}
   LaBaBalle: {fileID: 1433203628695504, guid: 2ed824299c2f4c54095ff092ccf92846, type: 2}
-  OffSet: {x: 0, y: 0}
 --- !u!212 &212217212646401882
 SpriteRenderer:
   m_ObjectHideFlags: 1
