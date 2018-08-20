@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114540289112588912}
   - component: {fileID: 50314107240718892}
   - component: {fileID: 61284183515857900}
+  - component: {fileID: 114007056600125340}
   m_Layer: 0
   m_Name: Fantome
   m_TagString: Enemie
@@ -88,6 +89,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.84004205, y: 1.3690548}
   m_EdgeRadius: 0
+--- !u!114 &114007056600125340
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1856658163428704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38514e7a2c90b8d46a2e87fe36457ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vie: 0
 --- !u!114 &114540289112588912
 MonoBehaviour:
   m_ObjectHideFlags: 1

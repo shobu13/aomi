@@ -12,10 +12,13 @@ public class Attack_Aomi : MonoBehaviour {
     private GameObject Chiro;
     private PlayerPlatformerController Link;
 
+    bool Touche;
     bool trigger;
     bool Attack;
     RaycastHit2D[] hit;
     Vector2 Stockage;
+    string StockageName;
+
 
     void Start () {
 
@@ -23,6 +26,7 @@ public class Attack_Aomi : MonoBehaviour {
         animator = gameObject.GetComponent<Animator>();
         Chiro = GameObject.Find("Chiro");
         Link = gameObject.GetComponent<PlayerPlatformerController>();
+        Touche = false;
 
     }
 
@@ -63,13 +67,28 @@ public class Attack_Aomi : MonoBehaviour {
 
             foreach (RaycastHit2D _hit in hit)
             {
-                if (_hit.collider.name == "floor" || _hit.collider.CompareTag("Enemie"))
+                if (_hit.collider.name == "floor")
                 {
                     if (_hit.collider.transform.position.x < Stockage.x)
                     {
                         Stockage = _hit.point;
+                        Touche = false;
                     }
                 }
+                if (_hit.collider.CompareTag("Enemie"))
+                {
+                    if (_hit.collider.transform.position.x < Stockage.x)
+                    {
+                        Stockage = _hit.point;
+                        StockageName = _hit.collider.name;
+                        Touche = true;
+                    }
+                }
+            }
+            if (Touche)
+            {
+                GameObject.Find(StockageName).GetComponent<Vie_Enemie>().Vie -= 50;
+                Touche = false;
             }
         }
 
@@ -82,19 +101,34 @@ public class Attack_Aomi : MonoBehaviour {
 
             foreach (RaycastHit2D _hit in hit)
             {
-                if(_hit.collider.name == "floor" || _hit.collider.CompareTag("Enemie"))
+                if (_hit.collider.name == "floor")
                 {
                     if (_hit.collider.transform.position.x > Stockage.x)
                     {
                         Stockage = _hit.point;
+                        Touche = false;
                     }
                 }
+                if (_hit.collider.CompareTag("Enemie"))
+                {
+                    if (_hit.collider.transform.position.x > Stockage.x)
+                    {
+                        Stockage = _hit.point;
+                        StockageName = _hit.collider.name;
+                        Touche = true;
+                    }
+                }
+            }
+            if(Touche)
+            {
+                GameObject.Find(StockageName).GetComponent<Vie_Enemie>().Vie -= 50;
+                Touche = false;
             }
         }
         
         if(Attack == true)
         {
-            Chiro.transform.position = Vector3.Lerp(Chiro.transform.position, Stockage, 0.025f);
+            Chiro.transform.position = Vector3.MoveTowards(Chiro.transform.position, Stockage, 0.125f);
         }
 
 

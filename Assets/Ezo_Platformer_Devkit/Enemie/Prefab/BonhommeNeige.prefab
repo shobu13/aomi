@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114392922726982010}
   - component: {fileID: 50633150141180700}
   - component: {fileID: 61317654178505370}
+  - component: {fileID: 114082972930440500}
   m_Layer: 0
   m_Name: BonhommeNeige
   m_TagString: Enemie
@@ -88,6 +89,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83648205, y: 1.3907218}
   m_EdgeRadius: 0
+--- !u!114 &114082972930440500
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356827391888950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38514e7a2c90b8d46a2e87fe36457ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vie: 0
 --- !u!114 &114392922726982010
 MonoBehaviour:
   m_ObjectHideFlags: 1
