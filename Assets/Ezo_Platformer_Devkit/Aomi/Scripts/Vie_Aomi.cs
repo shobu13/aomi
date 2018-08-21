@@ -5,21 +5,42 @@ using UnityEngine.SceneManagement;
 
 public class Vie_Aomi : MonoBehaviour {
 
-    float Vie;
+    public float Vie;
+    public float Mana;
 
-	void Start () {
+    bool Recharge;
+
+    void Start () {
 
         Vie = 150;
+        Mana = 100;
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
+
+        if(Mana < 100 && !Recharge)
+        {
+            Recharge = true;
+            StartCoroutine("_Mana");
+        }
+
         if(Vie <= 0)
         {
             SceneManager.LoadScene("GameOver");
         }
 
 	}
+
+    IEnumerator _Mana()
+    {
+
+        yield return new WaitForSeconds(2);
+        Mana += 10;
+        Recharge = false;
+
+    }
+
 }

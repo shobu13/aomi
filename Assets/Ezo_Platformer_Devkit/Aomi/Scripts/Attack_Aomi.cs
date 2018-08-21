@@ -8,25 +8,27 @@ public class Attack_Aomi : MonoBehaviour {
     public float ForceChiro;
     public float Distance;
     public float OffSet;
+    public bool Attack;
+    public float JumpForce;
+    public GameObject LASER;
+    public bool Special;
 
     private GameObject Chiro;
     private PlayerPlatformerController Link;
 
-    bool Touche;
     bool trigger;
-    bool Attack;
     RaycastHit2D[] hit;
     Vector2 Stockage;
-    string StockageName;
+    Rigidbody2D rb2d;
 
 
     void Start () {
 
+        rb2d = gameObject.GetComponent<Rigidbody2D>();
         Attack = false;
         animator = gameObject.GetComponent<Animator>();
         Chiro = GameObject.Find("Chiro");
         Link = gameObject.GetComponent<PlayerPlatformerController>();
-        Touche = false;
 
     }
 
@@ -36,27 +38,47 @@ public class Attack_Aomi : MonoBehaviour {
         
         if (!Attack && Link.Flip)
         {
+
+            Destroy(GameObject.Find("Energie"));
+            Destroy(GameObject.Find("Trainé"));
+            StartCoroutine("ParticuleLaisse");
             Chiro.GetComponent<SpriteRenderer>().flipX = true;
-            Chiro.transform.position = Vector3.Lerp(Chiro.transform.position, new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y + 1, 0), 0.045f);
+            Chiro.transform.position = Vector3.MoveTowards(Chiro.transform.position, new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y + 1, 0), 0.3f);
         }
 
         if (!Attack && !Link.Flip)
         {
+
+            Destroy(GameObject.Find("Energie"));
+            Destroy(GameObject.Find("Trainé"));
+            StartCoroutine("ParticuleLaisse");
             Chiro.GetComponent<SpriteRenderer>().flipX = false;
-            Chiro.transform.position = Vector3.Lerp(Chiro.transform.position, new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y + 1, 0), 0.045f);
+            Chiro.transform.position = Vector3.MoveTowards(Chiro.transform.position, new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y + 1, 0), 0.3f);
         }
         
 
-        if (Input.GetKeyDown("x") && !Attack)
+        if (Input.GetKeyDown("x") && !Attack)       //Attack de base
         {
+            Special = false;
             trigger = true;
             Attack = true;
-            //animator.SetBool("Attack1", true);
+            animator.SetTrigger("Attack");
+            StartCoroutine("Wait");
+
+        }
+        if (Input.GetKeyDown("c") && !Attack && gameObject.GetComponent<Vie_Aomi>().Mana >= 30)       //Attack Special(pareil mais special)
+        {
+            gameObject.GetComponent<Vie_Aomi>().Mana -= 30;
+            Special = true;
+            Instantiate(LASER, Chiro.transform);
+            trigger = true;
+            Attack = true;
+            animator.SetTrigger("Attack");
             StartCoroutine("Wait");
 
         }
 
-        
+
         if (trigger && !Link.Flip)
         {
 
@@ -72,7 +94,6 @@ public class Attack_Aomi : MonoBehaviour {
                     if (_hit.collider.transform.position.x < Stockage.x)
                     {
                         Stockage = _hit.point;
-                        Touche = false;
                     }
                 }
                 if (_hit.collider.CompareTag("Enemie"))
@@ -80,16 +101,10 @@ public class Attack_Aomi : MonoBehaviour {
                     if (_hit.collider.transform.position.x < Stockage.x)
                     {
                         Stockage = _hit.point;
-                        StockageName = _hit.collider.name;
-                        Touche = true;
                     }
                 }
             }
-            if (Touche)
-            {
-                GameObject.Find(StockageName).GetComponent<Vie_Enemie>().Vie -= 50;
-                Touche = false;
-            }
+            
         }
 
         if (trigger && Link.Flip)
@@ -106,40 +121,63 @@ public class Attack_Aomi : MonoBehaviour {
                     if (_hit.collider.transform.position.x > Stockage.x)
                     {
                         Stockage = _hit.point;
-                        Touche = false;
                     }
                 }
                 if (_hit.collider.CompareTag("Enemie"))
                 {
                     if (_hit.collider.transform.position.x > Stockage.x)
                     {
-                        Stockage = _hit.point;
-                        StockageName = _hit.collider.name;
-                        Touche = true;
+                        Stockage = _hit.point - new Vector2(1, 0);
                     }
                 }
             }
-            if(Touche)
-            {
-                GameObject.Find(StockageName).GetComponent<Vie_Enemie>().Vie -= 50;
-                Touche = false;
-            }
         }
-        
-        if(Attack == true)
+        if (Attack == true && Special)
         {
-            Chiro.transform.position = Vector3.MoveTowards(Chiro.transform.position, Stockage, 0.125f);
+            Chiro.transform.position = Vector3.MoveTowards(Chiro.transform.position, Stockage, 0.4f);
+        }
+
+
+        if (Attack == true && !Special)
+        {
+            Chiro.transform.position = Vector3.MoveTowards(Chiro.transform.position, Stockage, 0.2f);
         }
 
 
     }
 
+    IEnumerator ParticuleLaisse()
+    {
+        yield return new WaitForSeconds(10);
+        Destroy(GameObject.Find("Laser(Clone)"));
+    }
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(2f);
-        Attack = false;
-        animator.SetBool("Attack1", false);
+        yield return new WaitForSeconds(1.3f);
+        if (Attack)
+        {
+            Attack = false;
+        }
+        if (Special)
+        {
+            Special = false;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.CompareTag("Enemie"))
+        {
+            collision.GetComponent<Vie_Enemie>().Vie -= 75;
+            rb2d.velocity = Vector2.up * JumpForce;
+        }
+        else
+        {
+            rb2d.velocity = Vector2.zero;
+        }
+
     }
 
 }

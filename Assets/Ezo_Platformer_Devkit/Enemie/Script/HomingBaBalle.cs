@@ -26,10 +26,6 @@ public class HomingBaBalle : MonoBehaviour {
         rb2d.AddForce(new Vector2(CibleX - BalleX, BalleY - CibleY) * Force, ForceMode2D.Impulse);
     }
 
-    void Update()
-    {
-        Debug.Log(gameObject.transform.position.x - Cible.transform.position.x);
-    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {

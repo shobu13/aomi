@@ -9,6 +9,7 @@ public class Enemie_AutoShoot : MonoBehaviour {
     public GameObject BouBoule;
     public GameObject LaBaBalle;
 
+    bool Stop;
     Animator animator;
     Vector2 OffSet1;
     Vector2 OffSet2;
@@ -28,13 +29,19 @@ public class Enemie_AutoShoot : MonoBehaviour {
         hit = Physics2D.CircleCastAll(gameObject.transform.position, Radius, Vector2.zero, 0);
         for(int i = 0; i < hit.Length; i++)
         {
-            if (hit[i].collider.CompareTag("Player") && CoolDown)
+            if (hit[i].collider.CompareTag("Player") && CoolDown && Cible.transform.position.x < gameObject.transform.position.x)
             {
+                Stop = false;
                 CoolDown = false;
                 StartCoroutine("Timer4s");
                 animator.SetTrigger("Shoot");
                 OffSet1 = new Vector2(gameObject.transform.position.x + -1, gameObject.transform.position.y + 0.75f);
                 StartCoroutine("Timer");
+            }
+            if(Cible.transform.position.x > gameObject.transform.position.x)
+            {
+                animator.SetTrigger("Stop");
+                Stop = true;
             }
         }
 	}
@@ -48,8 +55,11 @@ public class Enemie_AutoShoot : MonoBehaviour {
     IEnumerator Timer()
     {
         yield return new WaitForSeconds(1);
-        Instantiate(LaBaBalle, OffSet1, gameObject.transform.rotation);
-        Instantiate(BouBoule, gameObject.transform.position, gameObject.transform.rotation);
+        if (!Stop)
+        {
+            Instantiate(LaBaBalle, OffSet1, gameObject.transform.rotation);
+            Instantiate(BouBoule, gameObject.transform.position, gameObject.transform.rotation);
+        }
     }
 
 }

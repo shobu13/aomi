@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 58353081837551078}
   - component: {fileID: 199082539389125898}
   - component: {fileID: 198196575195209202}
+  - component: {fileID: 114729371529544492}
   m_Layer: 0
   m_Name: LaBaBalle
   m_TagString: Untagged
@@ -93,6 +94,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Force: 1.75
   Explosion: {fileID: 1028896782933098, guid: 64e33b9d00e20224588b769790427850, type: 2}
+--- !u!114 &114729371529544492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1433203628695504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a97cfa5e82ee645899d5128486ff3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198196575195209202
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -2682,7 +2694,7 @@ ParticleSystem:
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2723,7 +2735,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 4
       minScalar: 1
       maxCurve:
         serializedVersion: 2

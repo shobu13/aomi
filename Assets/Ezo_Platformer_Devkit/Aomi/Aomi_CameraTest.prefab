@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 114729294321156018}
   - component: {fileID: 61321720693609582}
   - component: {fileID: 114134936001586532}
+  - component: {fileID: 114126535708201232}
   m_Layer: 8
   m_Name: Aomi_CameraTest
   m_TagString: Player
@@ -59,7 +60,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690202740500672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0000076293945, y: 0.8283539, z: -10}
+  m_LocalPosition: {x: 0.000002861023, y: 0.8283539, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4820658626264472}
@@ -184,6 +185,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114126535708201232
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1909691542493598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb03dbddabb239442a0155f8092628fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vie: 0
 --- !u!114 &114134936001586532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -199,6 +212,7 @@ MonoBehaviour:
   ForceChiro: 10
   Distance: 8
   OffSet: 0.15
+  Attack: 0
 --- !u!114 &114265839455549212
 MonoBehaviour:
   m_ObjectHideFlags: 1

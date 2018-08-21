@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114470536118911426}
   - component: {fileID: 114975211821552702}
   - component: {fileID: 95842677271845298}
-  - component: {fileID: 61294128425783642}
+  - component: {fileID: 61309676605802766}
   m_Layer: 0
   m_Name: Tourelle
   m_TagString: Enemie
@@ -75,7 +75,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61294128425783642
+--- !u!61 &61309676605802766
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -204,7 +204,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -793850133
+  randomSeed: 1465893370
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -357,7 +357,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 0
-      minScalar: 0
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -764,7 +764,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 50
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1118,7 +1118,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.2720312, g: 0, b: 0.4056604, a: 0}
+        key0: {r: 1, g: 0.25073528, b: 0, a: 0}
         key1: {r: 0, g: 0, b: 0, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -2735,9 +2735,9 @@ ParticleSystem:
       type: 0
       properties: 0
   LightsModule:
-    enabled: 0
-    ratio: 0
-    light: {fileID: 0}
+    enabled: 1
+    ratio: 1
+    light: {fileID: 108552101122537090, guid: dfde3f46b3572d24b84e23de7709412a, type: 2}
     randomDistribution: 1
     color: 1
     range: 1
@@ -2786,7 +2786,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 10
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2824,7 +2824,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    maxLights: 20
+    maxLights: 1000
   TrailModule:
     enabled: 0
     mode: 0
