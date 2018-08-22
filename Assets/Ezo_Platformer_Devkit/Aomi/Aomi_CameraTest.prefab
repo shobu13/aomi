@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 61321720693609582}
   - component: {fileID: 114134936001586532}
   - component: {fileID: 114126535708201232}
+  - component: {fileID: 61474880103788430}
   m_Layer: 8
   m_Name: Aomi_CameraTest
   m_TagString: Player
@@ -60,7 +61,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690202740500672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.000002861023, y: 0.8283539, z: -10}
+  m_LocalPosition: {x: 0.000002861023, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4820658626264472}
@@ -161,6 +162,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83648205, y: 1.3907218}
   m_EdgeRadius: 0
+--- !u!61 &61474880103788430
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1909691542493598}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.025357246, y: -0.9056003}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.23929596, y: 0.24675798}
+  m_EdgeRadius: 0
 --- !u!81 &81755801032878692
 AudioListener:
   m_ObjectHideFlags: 1
@@ -197,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Vie: 0
+  Mana: 0
 --- !u!114 &114134936001586532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,6 +240,12 @@ MonoBehaviour:
   Distance: 8
   OffSet: 0.15
   Attack: 0
+  JumpForce: 5
+  Energie: {fileID: 1910942225715516, guid: 8648502eae4c78449840f6e08716380b, type: 2}
+  Laisse: {fileID: 1646579865634286, guid: 58a3ce6047fba324f93426fca5b081e3, type: 2}
+  ChiroSpecial: {fileID: 1101727594232428, guid: 35a74ff25951c204e9c91701d97b52e0,
+    type: 2}
+  Special: 0
 --- !u!114 &114265839455549212
 MonoBehaviour:
   m_ObjectHideFlags: 1

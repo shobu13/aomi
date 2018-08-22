@@ -10,12 +10,17 @@ public class Attack_Aomi : MonoBehaviour {
     public float OffSet;
     public bool Attack;
     public float JumpForce;
-    public GameObject LASER;
+    public GameObject Energie;
+    public GameObject LaisseRight;
+    public GameObject LaisseLeft;
+    public GameObject ChiroSpecial;
     public bool Special;
 
     private GameObject Chiro;
     private PlayerPlatformerController Link;
 
+    bool Pret;
+    GameObject ChiroSpecialSpawne;
     bool trigger;
     RaycastHit2D[] hit;
     Vector2 Stockage;
@@ -29,29 +34,32 @@ public class Attack_Aomi : MonoBehaviour {
         animator = gameObject.GetComponent<Animator>();
         Chiro = GameObject.Find("Chiro");
         Link = gameObject.GetComponent<PlayerPlatformerController>();
+        Pret = true;
 
     }
 
     void Update () {
 
-   
-        
+
+        if (ChiroSpecialSpawne != null && !Link.Flip)
+        {
+            ChiroSpecialSpawne.GetComponent<SpriteRenderer>().flipX = false;
+            ChiroSpecialSpawne.transform.position = Vector3.MoveTowards(ChiroSpecialSpawne.transform.position, new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y + 1, 0), 0.3f);
+        }
+        if (ChiroSpecialSpawne != null && Link.Flip)
+        {
+            ChiroSpecialSpawne.GetComponent<SpriteRenderer>().flipX = true;
+            ChiroSpecialSpawne.transform.position = Vector3.MoveTowards(ChiroSpecialSpawne.transform.position, new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y + 1, 0), 0.3f);
+        }
+
         if (!Attack && Link.Flip)
         {
-
-            Destroy(GameObject.Find("Energie"));
-            Destroy(GameObject.Find("Trainé"));
-            StartCoroutine("ParticuleLaisse");
             Chiro.GetComponent<SpriteRenderer>().flipX = true;
             Chiro.transform.position = Vector3.MoveTowards(Chiro.transform.position, new Vector3(gameObject.transform.position.x + 1, gameObject.transform.position.y + 1, 0), 0.3f);
         }
 
         if (!Attack && !Link.Flip)
         {
-
-            Destroy(GameObject.Find("Energie"));
-            Destroy(GameObject.Find("Trainé"));
-            StartCoroutine("ParticuleLaisse");
             Chiro.GetComponent<SpriteRenderer>().flipX = false;
             Chiro.transform.position = Vector3.MoveTowards(Chiro.transform.position, new Vector3(gameObject.transform.position.x - 1, gameObject.transform.position.y + 1, 0), 0.3f);
         }
@@ -66,11 +74,23 @@ public class Attack_Aomi : MonoBehaviour {
             StartCoroutine("Wait");
 
         }
-        if (Input.GetKeyDown("c") && !Attack && gameObject.GetComponent<Vie_Aomi>().Mana >= 30)       //Attack Special(pareil mais special)
+        if (Input.GetKeyDown("c") && !Attack && gameObject.GetComponent<Vie_Aomi>().Mana >= 30 && Pret)       //Attack Special(pareil mais special)
         {
+            Pret = false;
+            StartCoroutine("Switch");
+            ChiroSpecialSpawne = Instantiate(ChiroSpecial, Chiro.transform.position, Chiro.transform.rotation);
+            Chiro.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 0);
             gameObject.GetComponent<Vie_Aomi>().Mana -= 30;
             Special = true;
-            Instantiate(LASER, Chiro.transform);
+            Instantiate(Energie, Chiro.transform);
+            if (!Link.Flip)
+            {
+                Instantiate(LaisseRight, Chiro.transform);
+            }
+            else
+            {
+                Instantiate(LaisseLeft, Chiro.transform);
+            }
             trigger = true;
             Attack = true;
             animator.SetTrigger("Attack");
@@ -146,10 +166,12 @@ public class Attack_Aomi : MonoBehaviour {
 
     }
 
-    IEnumerator ParticuleLaisse()
+    IEnumerator Switch()
     {
-        yield return new WaitForSeconds(10);
-        Destroy(GameObject.Find("Laser(Clone)"));
+        yield return new WaitForSeconds(3);
+        Chiro.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
+        Destroy(ChiroSpecialSpawne);
+        Pret = true;
     }
 
     IEnumerator Wait()
