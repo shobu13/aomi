@@ -65,7 +65,7 @@ public class Attack_Aomi : MonoBehaviour {
         }
         
 
-        if (Input.GetKeyDown("x") && !Attack)       //Attack de base
+        if (Input.GetKeyDown("x") && !Attack && Pret)       //Attack de base
         {
             Special = false;
             trigger = true;
@@ -176,7 +176,7 @@ public class Attack_Aomi : MonoBehaviour {
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(2f);
         if (Attack)
         {
             Attack = false;
