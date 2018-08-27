@@ -8,6 +8,7 @@ TagManager:
   - collider
   - checkpoint
   - Enemie
+  - Boss_Fee
   layers:
   - Default
   - TransparentFX

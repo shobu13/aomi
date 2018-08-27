@@ -857,9 +857,12 @@ GameObject:
   - component: {fileID: 801416486}
   - component: {fileID: 801416485}
   - component: {fileID: 801416489}
+  - component: {fileID: 801416490}
+  - component: {fileID: 801416491}
+  - component: {fileID: 801416492}
   m_Layer: 0
   m_Name: Boss-Fee
-  m_TagString: Untagged
+  m_TagString: Boss_Fee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -887,10 +890,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTremblement: {fileID: 801416485}
-  PluieDeCristal: {fileID: 1688807273941298, guid: 6ed42c4bbc0c9134bb249d2bc2af962a,
+  PluieDeCristal: {fileID: 1249356429910574, guid: 5e28e87227df37744940a6e971e38c6f,
     type: 2}
   RayonMagique: {fileID: 1868790288217972, guid: be1ec5343b40e284081c13c3806fa9ab,
     type: 2}
+  retour: 0
 --- !u!61 &801416487
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -900,10 +904,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.016542792, y: 0.3777237}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -914,7 +918,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.757375, y: 0.07912636}
   m_EdgeRadius: 0
 --- !u!4 &801416488
 Transform:
@@ -973,6 +977,68 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &801416490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801416484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee3eb549b46e7f48a2fc96e6618e181, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Vie: 0
+--- !u!61 &801416491
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801416484}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.022036076, y: -0.311553}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.76862144, y: 1.376894}
+  m_EdgeRadius: 0
+--- !u!61 &801416492
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801416484}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.022056937, y: -1.01}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 2}
+    newSize: {x: 1, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7684033, y: 0.07912636}
+  m_EdgeRadius: 0
 --- !u!1 &850951043
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,6 +1948,19 @@ Prefab:
       value: 
       objectReference: {fileID: 1025886857984320, guid: 8648502eae4c78449840f6e08716380b,
         type: 2}
+    - target: {fileID: 20473903592645646, guid: 58373d2f9965236408e1bd112cdd79e1,
+        type: 2}
+      propertyPath: orthographic size
+      value: 5.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368293509054180, guid: 58373d2f9965236408e1bd112cdd79e1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.000002861023
+      objectReference: {fileID: 0}
+    - target: {fileID: 4368293509054180, guid: 58373d2f9965236408e1bd112cdd79e1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58373d2f9965236408e1bd112cdd79e1, type: 2}
   m_IsPrefabParent: 0

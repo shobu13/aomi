@@ -28,7 +28,12 @@ public class BouttonManager : MonoBehaviour
 //        PlayText.GetComponent<TextMeshProUGUI>().text = uiComponent["PlayText"];
     }
 
-	public void Jouer()
+    public void Recommencer()
+    {
+        SceneManager.LoadScene("ice" + GameObject.Find("Manager").GetComponent<Manager>().Level);
+    }
+
+    public void Jouer()
     {
         SceneManager.LoadScene("Scenar");
     }

@@ -192,7 +192,16 @@ public class Attack_Aomi : MonoBehaviour {
 
         if (collision.CompareTag("Enemie"))
         {
-            collision.GetComponent<Vie_Enemie>().Vie -= 75;
+            collision.GetComponent<Vie_Enemie>().Vie -= 25;
+            rb2d.velocity = Vector2.up * JumpForce;
+        }
+        else
+        {
+            rb2d.velocity = Vector2.zero;
+        }
+        if (collision.CompareTag("Boss_Fee") && collision.GetComponent<Bossfee>().retour)
+        {
+            collision.GetComponent<Vie_Boss_Fee>().Vie -= 25;
             rb2d.velocity = Vector2.up * JumpForce;
         }
         else

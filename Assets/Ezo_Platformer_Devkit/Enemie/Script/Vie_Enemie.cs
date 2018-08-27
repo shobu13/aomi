@@ -7,7 +7,7 @@ public class Vie_Enemie : MonoBehaviour {
     public float Vie;
 
 	void Start () {
-
+        
         Vie = 150;
 
 	}

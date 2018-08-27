@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4580464546541242}
   - component: {fileID: 199646852273166048}
   - component: {fileID: 198305320022378366}
+  - component: {fileID: 114608197449226510}
   m_Layer: 0
   m_Name: Trace
   m_TagString: Untagged
@@ -55,6 +56,7 @@ GameObject:
   - component: {fileID: 4709652810582246}
   - component: {fileID: 199782244705633130}
   - component: {fileID: 198852575214501544}
+  - component: {fileID: 114282575722325520}
   m_Layer: 0
   m_Name: Laser (1)
   m_TagString: Untagged
@@ -72,6 +74,7 @@ GameObject:
   - component: {fileID: 4363151455333532}
   - component: {fileID: 199248929279529554}
   - component: {fileID: 198930078378098718}
+  - component: {fileID: 114332769082653068}
   m_Layer: 0
   m_Name: Trace (1)
   m_TagString: Untagged
@@ -89,6 +92,7 @@ GameObject:
   - component: {fileID: 4040418777963672}
   - component: {fileID: 199775638294009898}
   - component: {fileID: 198455240797871944}
+  - component: {fileID: 114996136224832034}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Untagged
@@ -123,6 +127,7 @@ GameObject:
   - component: {fileID: 4650466847738036}
   - component: {fileID: 198555606156087008}
   - component: {fileID: 199200855777280250}
+  - component: {fileID: 114466608203285916}
   m_Layer: 0
   m_Name: Eclat
   m_TagString: Untagged
@@ -257,6 +262,50 @@ Transform:
   m_Father: {fileID: 4580464546541242}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114282575722325520
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1130361047939428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f030e49530e22064d8f01c11f0c6d53c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114332769082653068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1422698231267518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f030e49530e22064d8f01c11f0c6d53c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114466608203285916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1677759582750858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f030e49530e22064d8f01c11f0c6d53c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114608197449226510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1011608988198274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f030e49530e22064d8f01c11f0c6d53c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114867939462470774
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,6 +315,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82a97cfa5e82ee645899d5128486ff3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114996136224832034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1515106338865472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f030e49530e22064d8f01c11f0c6d53c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!198 &198305320022378366
@@ -325,7 +385,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: -835737344
@@ -3682,7 +3742,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 2
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -3720,7 +3780,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: -18278650
@@ -7117,7 +7177,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: -52024256
@@ -17252,7 +17312,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 2
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -17290,7 +17350,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 895492741
@@ -20681,7 +20741,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: -1042329456
