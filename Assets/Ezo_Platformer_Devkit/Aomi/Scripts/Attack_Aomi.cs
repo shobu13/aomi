@@ -169,7 +169,7 @@ public class Attack_Aomi : MonoBehaviour {
 
     IEnumerator Switch()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3f);
         Chiro.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 255);
         Destroy(ChiroSpecialSpawne);
         Pret = true;
@@ -178,9 +178,10 @@ public class Attack_Aomi : MonoBehaviour {
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(2f);
-        Pret = true;
         Attack = false;
         Special = false;
+        yield return new WaitForSeconds(1);
+        Pret = true;
     }
 
     void OnTriggerEnter2D(Collider2D collision)

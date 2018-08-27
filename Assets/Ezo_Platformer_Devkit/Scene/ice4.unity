@@ -780,72 +780,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &600105987
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 600105990}
-  - component: {fileID: 600105989}
-  - component: {fileID: 600105988}
-  m_Layer: 0
-  m_Name: Goal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &600105988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 600105987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ca122eed3acb204598b716c67d51e55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!61 &600105989
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 600105987}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!4 &600105990
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 600105987}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.5, y: -2.88, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &628554344
 Prefab:
   m_ObjectHideFlags: 0
@@ -883,7 +817,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4878401774659288, guid: 1a744cd66bc24c14eb85bd7205d2aa24, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a744cd66bc24c14eb85bd7205d2aa24, type: 2}
@@ -1048,7 +982,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &801416489
 SpriteRenderer:
@@ -2031,6 +1965,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114126535708201232, guid: 58373d2f9965236408e1bd112cdd79e1,
+        type: 2}
+      propertyPath: BarreDeVie
+      value: 
+      objectReference: {fileID: 475537281}
+    - target: {fileID: 114126535708201232, guid: 58373d2f9965236408e1bd112cdd79e1,
+        type: 2}
+      propertyPath: BarreDeMana
+      value: 
+      objectReference: {fileID: 1966387966}
     - target: {fileID: 114729294321156018, guid: 58373d2f9965236408e1bd112cdd79e1,
         type: 2}
       propertyPath: ScoreText
@@ -2061,51 +2005,6 @@ Prefab:
       propertyPath: Debug
       value: 
       objectReference: {fileID: 1938243689}
-    - target: {fileID: 4368293509054180, guid: 58373d2f9965236408e1bd112cdd79e1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114134936001586532, guid: 58373d2f9965236408e1bd112cdd79e1,
-        type: 2}
-      propertyPath: LaisseLeft
-      value: 
-      objectReference: {fileID: 1646579865634286, guid: 57eda85f0bd6baa4abb86b66972f087f,
-        type: 2}
-    - target: {fileID: 114134936001586532, guid: 58373d2f9965236408e1bd112cdd79e1,
-        type: 2}
-      propertyPath: LaisseRight
-      value: 
-      objectReference: {fileID: 1646579865634286, guid: 2b16e8b45934be24993fc548a90e0d21,
-        type: 2}
-    - target: {fileID: 114134936001586532, guid: 58373d2f9965236408e1bd112cdd79e1,
-        type: 2}
-      propertyPath: Energie
-      value: 
-      objectReference: {fileID: 1025886857984320, guid: 8648502eae4c78449840f6e08716380b,
-        type: 2}
-    - target: {fileID: 20473903592645646, guid: 58373d2f9965236408e1bd112cdd79e1,
-        type: 2}
-      propertyPath: orthographic size
-      value: 5.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368293509054180, guid: 58373d2f9965236408e1bd112cdd79e1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.000002861023
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368293509054180, guid: 58373d2f9965236408e1bd112cdd79e1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114126535708201232, guid: 58373d2f9965236408e1bd112cdd79e1,
-        type: 2}
-      propertyPath: BarreDeMana
-      value: 
-      objectReference: {fileID: 1966387966}
-    - target: {fileID: 114126535708201232, guid: 58373d2f9965236408e1bd112cdd79e1,
-        type: 2}
-      propertyPath: BarreDeVie
-      value: 
-      objectReference: {fileID: 475537281}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58373d2f9965236408e1bd112cdd79e1, type: 2}
   m_IsPrefabParent: 0

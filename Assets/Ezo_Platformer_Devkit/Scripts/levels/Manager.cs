@@ -10,5 +10,6 @@ public class Manager : MonoBehaviour {
 
         DontDestroyOnLoad(gameObject);
 
+
 	}
 }

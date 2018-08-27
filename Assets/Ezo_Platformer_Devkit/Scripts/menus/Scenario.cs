@@ -47,7 +47,7 @@ public class Scenario : MonoBehaviour
 
         if (CompteurText >= 6)
         {
-            SceneManager.LoadScene("ProtoLevel1");
+            SceneManager.LoadScene("ice1");
         }
     }
 }
