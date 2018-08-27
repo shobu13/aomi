@@ -29,8 +29,14 @@ public class HomingBaBalle : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") || collision.name == "floor")
+        if (collision.name == "floor")
         {
+            Instantiate(Explosion, gameObject.transform.position, gameObject.transform.rotation);
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("Player"))
+        {
+            collision.GetComponent<Vie_Aomi>().Vie -= 25;
             Instantiate(Explosion, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }

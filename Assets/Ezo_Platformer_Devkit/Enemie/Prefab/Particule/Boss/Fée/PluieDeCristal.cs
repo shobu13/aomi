@@ -21,13 +21,13 @@ public class PluieDeCristal : MonoBehaviour {
         if(Timer <= 0)
         {
             Timer = Random.Range(2, 3);
-            RandomPosition = new Vector2(Random.Range(-17, -1), 2);
+            RandomPosition = new Vector2(Random.Range(-17, -13), 2);
             Instantiate(Glace, RandomPosition, gameObject.transform.rotation);
-            RandomPosition = new Vector2(Random.Range(-17, -1), 2);
+            RandomPosition = new Vector2(Random.Range(-13, -9), 2);
             Instantiate(Glace, RandomPosition, gameObject.transform.rotation);
-            RandomPosition = new Vector2(Random.Range(-17, -1), 2);
+            RandomPosition = new Vector2(Random.Range(-9, -5), 2);
             Instantiate(Glace, RandomPosition, gameObject.transform.rotation);
-            RandomPosition = new Vector2(Random.Range(-17, -1), 2);
+            RandomPosition = new Vector2(Random.Range(-5, -1), 2);
             Instantiate(Glace, RandomPosition, gameObject.transform.rotation);
 
         }

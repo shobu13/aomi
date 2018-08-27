@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Vie_Aomi : MonoBehaviour {
 
     public float Vie;
     public float Mana;
+    public Slider BarreDeVie;
+    public Slider BarreDeMana;
 
     bool Recharge;
 
@@ -19,9 +22,11 @@ public class Vie_Aomi : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
 
-        if(Mana < 100 && !Recharge)
+        BarreDeVie.value = Vie;
+        BarreDeMana.value = Mana;
+
+        if (Mana < 100 && !Recharge)
         {
             Recharge = true;
             StartCoroutine("_Mana");

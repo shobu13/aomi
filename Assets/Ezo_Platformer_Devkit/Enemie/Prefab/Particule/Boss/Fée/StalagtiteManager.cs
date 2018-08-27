@@ -28,7 +28,6 @@ public class StalagtiteManager : MonoBehaviour {
         
         if(collision.name == "floor")
         {
-            Debug.Log("Stop");
             Tombe = false;
             gameObject.GetComponent<SpriteRenderer>().flipY = false;
             StartCoroutine("TimerSuicide");
@@ -36,6 +35,7 @@ public class StalagtiteManager : MonoBehaviour {
         if (collision.CompareTag("Player"))
         {
             collision.GetComponent<Vie_Aomi>().Vie -= 25;
+            Destroy(gameObject);
         }
 
     }

@@ -5,17 +5,20 @@ using UnityEngine;
 public class Bossfee : MonoBehaviour
 {
 
-    public CameraTremblement cameraTremblement;
     public GameObject PluieDeCristal;
-    public GameObject RayonMagique;
+    public GameObject RayonMagiqueLeft;
+    public GameObject RayonMagiqueRight;
     public bool retour;
 
+    RaycastHit2D[] hit;
+    Animator CamAnimator;
     Vector3 OriginalPosition;
     Vector3 Position;
     GameObject Aomi;
     GameObject rayonSpawne;
     float Angle;
     float Vie;
+    bool Gauche;
     bool Phase2;
     bool PhaseFinal;
     bool trigger;
@@ -25,19 +28,34 @@ public class Bossfee : MonoBehaviour
     bool Attack3;
     bool rayonMagique;
     bool charge;
+    bool Touche;
+    bool Contact;
 
     void Start()
     {
 
         OriginalPosition = gameObject.transform.position;
-        cameraTremblement = gameObject.GetComponent<CameraTremblement>();
+        CamAnimator = GameObject.Find("CM vcam1").GetComponent<Animator>();
         Aomi = GameObject.Find("Aomi_CameraTest");
-        Attack2 = true;
 
     }
 
     void Update()
     {
+
+        if(gameObject.transform.position.x > Aomi.transform.position.x)
+        {
+            Gauche = true;
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else
+        {
+            Gauche = false;
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+
+        //////////////////////////////////////////////////////////////
+
         Vie = gameObject.GetComponent<Vie_Boss_Fee>().Vie;
         if (rayonMagique)
         {
@@ -78,19 +96,27 @@ public class Bossfee : MonoBehaviour
             if (!Attack1)
             {
                 // Chute de cristal
+                CamAnimator.SetTrigger("Shake");
                 Attack1 = true;
                 retour = false;
-                Instantiate(PluieDeCristal);
-               // StartCoroutine(cameraTremblement.Tremblement(2f, 0.4f));                 //Phase 1
+                                                                        //Phase 1
                 StartCoroutine("_Attack1");
 
             }
             if (Attack2)
             {
                 // Rayon magique
+ 
                 rayonMagique = true;
                 Attack2 = false;
-                Instantiate(RayonMagique, gameObject.transform);
+                if (Gauche)
+                {
+                    Instantiate(RayonMagiqueLeft, gameObject.transform);
+                }
+                else
+                {
+                    Instantiate(RayonMagiqueRight, gameObject.transform);
+                }
                 StartCoroutine("_Attack2");
             }
             if (Attack3)
@@ -116,24 +142,67 @@ public class Bossfee : MonoBehaviour
     {
 
         gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, Position, 0.075f);
-
+        if (Contact)
+        {
+            Contact = false;
+            charge = false;
+            Aomi.GetComponent<Vie_Aomi>().Vie -= 25;
+        }
     }
     void _Retour()
     {
         gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, OriginalPosition, 0.075f);
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Contact = true;
+        }
+        else
+        {
+            Contact = false;
+        }
+    }
+
     IEnumerator _Attack1()
     {
-        yield return new WaitForSeconds(11);
+        yield return new WaitForSeconds(1);
+        Instantiate(PluieDeCristal);
+        yield return new WaitForSeconds(1);
+        Attack2 = true;
+        yield return new WaitForSeconds(9);
         Attack1 = false;
     }
     IEnumerator _Attack2()
     {
         yield return new WaitForSeconds(2);
         rayonMagique = false;
-        yield return new WaitForSeconds(3);
+        if (Gauche)
+        {
+            hit = Physics2D.RaycastAll(gameObject.transform.position, Vector2.left, 100);
+        }
+        else
+        {
+            hit = Physics2D.RaycastAll(gameObject.transform.position, Vector2.right, 100);
+        }
+        foreach (RaycastHit2D _hit in hit)
+        {
+            if (_hit.collider.CompareTag("Player"))
+            {
+                Touche = true;
+            }
+        }
+        yield return new WaitForSeconds(1);
+        if (Touche)
+        {
+            Aomi.GetComponent<Vie_Aomi>().Vie -= 50;
+            Touche = false;
+        }
+        yield return new WaitForSeconds(2);
         Attack3 = true;
+        Touche = false;
     }
     IEnumerator _Attack3()
     {

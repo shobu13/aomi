@@ -67,6 +67,7 @@ public class Attack_Aomi : MonoBehaviour {
 
         if (Input.GetKeyDown("x") && !Attack && Pret)       //Attack de base
         {
+            Pret = false;
             Special = false;
             trigger = true;
             Attack = true;
@@ -177,14 +178,9 @@ public class Attack_Aomi : MonoBehaviour {
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(2f);
-        if (Attack)
-        {
-            Attack = false;
-        }
-        if (Special)
-        {
-            Special = false;
-        }
+        Pret = true;
+        Attack = false;
+        Special = false;
     }
 
     void OnTriggerEnter2D(Collider2D collision)

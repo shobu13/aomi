@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 4796203944329964}
   - component: {fileID: 114867939462470774}
   m_Layer: 0
-  m_Name: RayonMagiqueLeft
+  m_Name: RayonMagiqueRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1868790288217972}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -248,7 +248,7 @@ Transform:
   - {fileID: 4650466847738036}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4818435127992744
 Transform:
   m_ObjectHideFlags: 1
