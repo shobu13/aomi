@@ -223,9 +223,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Vie: 0
+  Seuil: 0
   Mana: 0
   BarreDeVie: {fileID: 0}
   BarreDeMana: {fileID: 0}
+  FRAPPE: 0
 --- !u!114 &114134936001586532
 MonoBehaviour:
   m_ObjectHideFlags: 1

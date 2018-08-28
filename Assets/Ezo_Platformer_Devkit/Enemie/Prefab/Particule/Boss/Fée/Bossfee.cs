@@ -30,6 +30,7 @@ public class Bossfee : MonoBehaviour
     bool charge;
     bool Touche;
     bool Contact;
+    bool BAM;
 
     void Start()
     {
@@ -43,7 +44,7 @@ public class Bossfee : MonoBehaviour
     void Update()
     {
 
-        if(gameObject.transform.position.x > Aomi.transform.position.x)
+        if (gameObject.transform.position.x > Aomi.transform.position.x)
         {
             Gauche = true;
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
@@ -62,6 +63,27 @@ public class Bossfee : MonoBehaviour
             // Rayon magique
             _RayonMagique();
         }
+        if (!rayonMagique && BAM)
+        {
+            if (Gauche)
+            {
+                hit = Physics2D.RaycastAll(gameObject.transform.position, Vector2.left, 100);
+            }
+            else
+            {
+                hit = Physics2D.RaycastAll(gameObject.transform.position, Vector2.right, 100);
+            }
+
+            foreach (RaycastHit2D _hit in hit)
+            {
+                if (_hit.collider.CompareTag("Player") && !GameObject.Find("Aomi_CameraTest").GetComponent<Vie_Aomi>().FRAPPE)
+                {
+                    //Aomi.GetComponent<Vie_Aomi>().Vie -= 50;
+                    Aomi.GetComponent<Vie_Aomi>().FRAPPE = true;
+                }
+            }
+        }
+
         if (charge)
         {
             // Rayon magique
@@ -73,9 +95,10 @@ public class Bossfee : MonoBehaviour
             _Retour();
         }
 
+
         //////////////////////////////////////////////////////////////
 
-        if(Vie > 625)
+        if (Vie > 625)
         {
             Phase1 = true;                                                               //Check de Phase
         }
@@ -94,14 +117,14 @@ public class Bossfee : MonoBehaviour
                 CamAnimator.SetTrigger("Shake");
                 Attack1 = true;
                 retour = false;
-                                                                        //Phase 1
+                //Phase 1
                 StartCoroutine("_Attack1");
 
             }
             if (Attack2)
             {
                 // Rayon magique
- 
+
                 rayonMagique = true;
                 Attack2 = false;
                 if (Gauche)
@@ -124,6 +147,7 @@ public class Bossfee : MonoBehaviour
             }
         }
         //////////////////////////////////////////////////////////////
+
 
     }
 
@@ -174,28 +198,9 @@ public class Bossfee : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         rayonMagique = false;
-        if (Gauche)
-        {
-            hit = Physics2D.RaycastAll(gameObject.transform.position, Vector2.left, 100);
-        }
-        else
-        {
-            hit = Physics2D.RaycastAll(gameObject.transform.position, Vector2.right, 100);
-        }
-        foreach (RaycastHit2D _hit in hit)
-        {
-            if (_hit.collider.CompareTag("Player"))
-            {
-                Touche = true;
-            }
-        }
-        yield return new WaitForSeconds(1);
-        if (Touche)
-        {
-            Aomi.GetComponent<Vie_Aomi>().Vie -= 50;
-            Touche = false;
-        }
-        yield return new WaitForSeconds(2);
+        BAM = true;
+        yield return new WaitForSeconds(3);
+        BAM = false;
         Attack3 = true;
         Touche = false;
     }
@@ -211,3 +216,5 @@ public class Bossfee : MonoBehaviour
     }
 
 }
+    
+

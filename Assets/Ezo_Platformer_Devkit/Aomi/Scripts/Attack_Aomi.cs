@@ -71,7 +71,7 @@ public class Attack_Aomi : MonoBehaviour {
             Special = false;
             trigger = true;
             Attack = true;
-            animator.SetTrigger("Attack");
+            //animator.SetTrigger("Attack");
             StartCoroutine("Wait");
 
         }
@@ -94,7 +94,7 @@ public class Attack_Aomi : MonoBehaviour {
             }
             trigger = true;
             Attack = true;
-            animator.SetTrigger("Attack");
+            //animator.SetTrigger("Attack");
             StartCoroutine("Wait");
 
         }

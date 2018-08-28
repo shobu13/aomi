@@ -8,9 +8,11 @@ public class LarmeManager : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !GameObject.Find("Aomi_CameraTest").GetComponent<Vie_Aomi>().FRAPPE)
         {
-            collision.GetComponent<Vie_Aomi>().Vie -= 25;
+            //collision.GetComponent<Vie_Aomi>().Vie -= 25;
+            collision.GetComponent<Vie_Aomi>().FRAPPE = true;
+
             Destroy(gameObject);
         }
         if (collision.name == "floor")

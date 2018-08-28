@@ -688,6 +688,11 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114559220707578812, guid: 19ba5f42f129af1438425abc094c2d85,
+        type: 2}
+      propertyPath: m_MaxValue
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 19ba5f42f129af1438425abc094c2d85, type: 2}
   m_IsPrefabParent: 0
@@ -2051,16 +2056,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114126535708201232, guid: 58373d2f9965236408e1bd112cdd79e1,
-        type: 2}
-      propertyPath: BarreDeVie
-      value: 
-      objectReference: {fileID: 475537281}
-    - target: {fileID: 114126535708201232, guid: 58373d2f9965236408e1bd112cdd79e1,
-        type: 2}
-      propertyPath: BarreDeMana
-      value: 
-      objectReference: {fileID: 1966387966}
     - target: {fileID: 114729294321156018, guid: 58373d2f9965236408e1bd112cdd79e1,
         type: 2}
       propertyPath: ScoreText
@@ -2091,23 +2086,16 @@ Prefab:
       propertyPath: Debug
       value: 
       objectReference: {fileID: 1938243689}
-    - target: {fileID: 4368293509054180, guid: 58373d2f9965236408e1bd112cdd79e1, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.8283539
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368293509054180, guid: 58373d2f9965236408e1bd112cdd79e1, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.000002861023
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368293509054180, guid: 58373d2f9965236408e1bd112cdd79e1, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 20473903592645646, guid: 58373d2f9965236408e1bd112cdd79e1,
+    - target: {fileID: 114126535708201232, guid: 58373d2f9965236408e1bd112cdd79e1,
         type: 2}
-      propertyPath: orthographic size
-      value: 5.38
-      objectReference: {fileID: 0}
+      propertyPath: BarreDeVie
+      value: 
+      objectReference: {fileID: 475537281}
+    - target: {fileID: 114126535708201232, guid: 58373d2f9965236408e1bd112cdd79e1,
+        type: 2}
+      propertyPath: BarreDeMana
+      value: 
+      objectReference: {fileID: 1966387966}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58373d2f9965236408e1bd112cdd79e1, type: 2}
   m_IsPrefabParent: 0

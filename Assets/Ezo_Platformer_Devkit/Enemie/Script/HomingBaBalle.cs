@@ -34,9 +34,10 @@ public class HomingBaBalle : MonoBehaviour {
             Instantiate(Explosion, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !GameObject.Find("Aomi_CameraTest").GetComponent<Vie_Aomi>().FRAPPE)
         {
-            collision.GetComponent<Vie_Aomi>().Vie -= 25;
+            //collision.GetComponent<Vie_Aomi>().Vie -= 25;
+            collision.GetComponent<Vie_Aomi>().FRAPPE = true;
             Instantiate(Explosion, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(gameObject);
         }

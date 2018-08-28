@@ -14,9 +14,10 @@ public class Etoile_Manager : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !GameObject.Find("Aomi_CameraTest").GetComponent<Vie_Aomi>().FRAPPE)
         {
-            collision.GetComponent<Vie_Aomi>().Vie -= 50;
+            //collision.GetComponent<Vie_Aomi>().Vie -= 50;
+            collision.GetComponent<Vie_Aomi>().FRAPPE = true;
             Destroy(gameObject);
         }
         if (collision.name == "Left")
@@ -32,7 +33,7 @@ public class Etoile_Manager : MonoBehaviour {
         if (collision.name == "Down")
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gameObject.GetComponent<Rigidbody2D>().velocity.x, 0);
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, Random.Range(5, 10)), ForceMode2D.Impulse);
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, Random.Range(10, 15)), ForceMode2D.Impulse);
         }
     }
 
