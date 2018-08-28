@@ -8,8 +8,10 @@ public class Vie_Boss_Fee : MonoBehaviour {
 
 	void Start () {
 
-        Vie = 1250;
+        Vie = 625;    
+        //Vie = 1250;
+        //Vie = 0;
 
-	}
+    }
 
 }

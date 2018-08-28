@@ -75,12 +75,7 @@ public class Bossfee : MonoBehaviour
 
         //////////////////////////////////////////////////////////////
 
-        if (Vie < 625 && Vie > 250)
-        {
-            Phase1 = false;
-            Phase2 = true;
-        }
-        if(Vie >= 625)
+        if(Vie > 625)
         {
             Phase1 = true;                                                               //Check de Phase
         }
