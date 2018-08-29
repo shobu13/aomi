@@ -6,6 +6,7 @@ public class BossFee_Phase2 : MonoBehaviour {
 
     public GameObject PleureStalagmite;
     public GameObject SlashPaillette;
+    public GameObject SlashAcumulation;
     public GameObject EtoileFilante;
     public float speed;
     public GameObject PatrolGauche;
@@ -56,6 +57,7 @@ public class BossFee_Phase2 : MonoBehaviour {
         {
             Slash = true;
             SlashSpawne = Instantiate(SlashPaillette, gameObject.transform.position, gameObject.transform.rotation);
+            Instantiate(SlashAcumulation, SlashSpawne.transform.position, SlashSpawne.transform.rotation);
             attack1 = true;
             StartCoroutine("_Attack1");
         }
